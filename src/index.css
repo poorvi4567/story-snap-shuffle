@@ -8,89 +8,114 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core colors inspired by Indian spiritual art */
+    --background: 36 40% 95%;
+    --foreground: 32 40% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 36 30% 97%;
+    --card-foreground: 32 40% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 36 30% 97%;
+    --popover-foreground: 32 40% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Saffron & earth tones from traditional art */
+    --primary: 32 84% 56%;
+    --primary-foreground: 36 30% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 198 65% 38%;
+    --secondary-foreground: 36 30% 97%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 36 15% 90%;
+    --muted-foreground: 32 25% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors from Krishna blue & terracotta */
+    --accent: 198 65% 38%;
+    --accent-foreground: 36 30% 97%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 36 30% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Subtle elements */
+    --border: 32 15% 85%;
+    --input: 32 15% 85%;
+    --ring: 32 84% 56%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Sidebar styling */
+    --sidebar-background: 32 30% 94%;
+    --sidebar-foreground: 32 40% 20%;
+    --sidebar-primary: 32 84% 56%;
+    --sidebar-primary-foreground: 36 30% 97%;
+    --sidebar-accent: 36 15% 90%;
+    --sidebar-accent-foreground: 32 40% 20%;
+    --sidebar-border: 32 15% 85%;
+    --sidebar-ring: 32 84% 56%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Game specific colors */
+    --game-board: 36 25% 92%;
+    --game-border: 32 50% 60%; 
+    --game-highlight: 32 84% 66%;
+    --game-drop-area: 36 15% 90%;
+    --game-success: 120 40% 55%;
+    --game-error: 0 72% 51%;
+    
+    /* Animation durations */
+    --transition-slow: 0.5s;
+    --transition-medium: 0.3s;
+    --transition-fast: 0.15s;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+.dark {
+    /* Core colors - dark mode inspired by night scenes in art */
+    --background: 215 30% 12%;
+    --foreground: 36 30% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 25% 15%;
+    --card-foreground: 36 30% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 25% 15%;
+    --popover-foreground: 36 30% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Deep midnight blue and moon yellow from art */
+    --primary: 32 80% 50%;
+    --primary-foreground: 215 25% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 198 60% 28%;
+    --secondary-foreground: 36 30% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 20% 20%;
+    --muted-foreground: 36 20% 80%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent colors - moonlight and night sky */
+    --accent: 198 60% 28%;
+    --accent-foreground: 36 30% 90%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 36 30% 90%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Subtle elements */
+    --border: 215 25% 25%;
+    --input: 215 25% 25%;
+    --ring: 32 80% 50%;
+
+    /* Sidebar styling */
+    --sidebar-background: 215 25% 18%;
+    --sidebar-foreground: 36 30% 90%;
+    --sidebar-primary: 32 80% 50%;
+    --sidebar-primary-foreground: 215 25% 15%;
+    --sidebar-accent: 215 20% 25%;
+    --sidebar-accent-foreground: 36 30% 90%;
+    --sidebar-border: 215 25% 25%;
+    --sidebar-ring: 32 80% 50%;
+    
+    /* Game specific colors */
+    --game-board: 215 25% 18%;
+    --game-border: 32 50% 45%; 
+    --game-highlight: 32 80% 55%;
+    --game-drop-area: 215 20% 22%;
+    --game-success: 120 40% 45%;
+    --game-error: 0 62% 40%;
   }
 }
 
@@ -101,5 +126,128 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Palatino', 'Times New Roman', serif;
+  }
+}
+
+@layer components {
+  .story-title {
+    @apply font-serif text-4xl md:text-5xl font-bold tracking-tight;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .game-container {
+    @apply container mx-auto px-4 py-8 max-w-5xl;
+  }
+
+  .board-grid {
+    @apply grid grid-cols-3 gap-4 p-4 rounded-lg;
+    background-color: hsl(var(--game-board));
+    border: 2px solid hsl(var(--game-border));
+  }
+
+  .drop-zone {
+    @apply flex items-center justify-center rounded-lg p-2 h-40 md:h-52;
+    background-color: hsl(var(--game-drop-area));
+    border: 2px dashed hsl(var(--game-border));
+    transition: all var(--transition-medium) ease-in-out;
+  }
+
+  .drop-zone.active {
+    border-color: hsl(var(--game-highlight));
+    box-shadow: 0 0 8px hsl(var(--game-highlight) / 0.5);
+  }
+
+  .drop-zone.occupied {
+    border-style: solid;
+  }
+
+  .carousel-container {
+    @apply mt-8 p-4 rounded-lg relative;
+    background-color: hsl(var(--game-board));
+    border: 2px solid hsl(var(--game-border));
+  }
+
+  .carousel-inner {
+    @apply flex overflow-hidden relative rounded-lg;
+    height: 250px;
+  }
+
+  .carousel-item {
+    @apply absolute w-full h-full transition-all duration-500 flex items-center justify-center;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  .carousel-item.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .carousel-item.previous {
+    transform: translateX(-100%);
+  }
+
+  .story-card {
+    @apply cursor-grab rounded-lg overflow-hidden bg-card border-2 border-solid border-primary/30;
+    width: 100%;
+    max-width: 220px;
+    transition: all var(--transition-fast) ease-in-out;
+  }
+
+  .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-color: hsl(var(--primary));
+  }
+
+  .story-card:active {
+    @apply cursor-grabbing;
+  }
+
+  .story-card img {
+    @apply w-full h-36 object-cover;
+  }
+
+  .carousel-nav {
+    @apply flex justify-between mt-4;
+  }
+
+  .control-button {
+    @apply px-6 py-2 rounded-full font-medium flex items-center justify-center gap-2 transition-all;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  .control-button:hover {
+    background-color: hsl(var(--primary) / 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .control-button:active {
+    transform: translateY(0);
+  }
+
+  .control-button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .result-message {
+    @apply mt-6 p-4 rounded-lg text-center font-semibold text-lg opacity-0 transition-opacity;
+  }
+
+  .result-message.success {
+    background-color: hsl(var(--game-success) / 0.2);
+    color: hsl(var(--game-success));
+    opacity: 1;
+  }
+
+  .result-message.error {
+    background-color: hsl(var(--game-error) / 0.2);
+    color: hsl(var(--game-error));
+    opacity: 1;
   }
 }
