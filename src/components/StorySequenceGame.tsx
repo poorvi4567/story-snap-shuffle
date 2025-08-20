@@ -11,15 +11,15 @@ interface StoryImage {
 
 // Sample story data - you can replace with your actual story images
 const storyImages: StoryImage[] = [
-  { id: 1, src: "/lovable-uploads/f7cd1248-38c9-41e2-8432-b03a6612ddce.png", alt: "Mending the broken statue", correctPosition: 1 },
-  { id: 2, src: "/lovable-uploads/75519923-cfcb-4672-9fd6-a66be3a7a7b6.png", alt: "Kali's Darshan", correctPosition: 2 },
-  { id: 3, src: "/lovable-uploads/c9c6c3f2-b9ca-4800-83e3-3feeb5e9e525.png", alt: "Marriage with Holy Mother", correctPosition: 3 },
-  { id: 4, src: "/lovable-uploads/54c53b9d-d624-4740-9ded-569f6627dea7.png", alt: "Tantra Sadhana", correctPosition: 4 },
-  { id: 5, src: "/lovable-uploads/60e017b3-acd5-4969-8da6-c1d5c26682b6.png", alt: "Meeting Jatadhari", correctPosition: 5 },
-  { id: 6, src: "/lovable-uploads/dee1e578-9c7c-497c-bede-7ca78f09e33a.png", alt: "Vedanta Sadhana", correctPosition: 6 },
-  { id: 7, src: "/lovable-uploads/5d2c11d1-79f1-4372-8174-00eea8a21d77.png", alt: "Practice of Islam", correctPosition: 7 },
-  { id: 8, src: "/lovable-uploads/60e78365-40cd-472a-9253-aefcd7d40161.png", alt: "Spiritual devotion", correctPosition: 8 },
-  { id: 9, src: "/lovable-uploads/1f1ed2a0-9689-4b75-b132-c1961ed9d558.png", alt: "First Biksha", correctPosition: 9 }
+  { id: 1, src: "/lovable-uploads/f7cd1248-38c9-41e2-8432-b03a6612ddce.png", alt: "Mending the broken statue", correctPosition: 2 },
+  { id: 2, src: "/lovable-uploads/75519923-cfcb-4672-9fd6-a66be3a7a7b6.png", alt: "Kali's Darshan", correctPosition: 3 },
+  { id: 3, src: "/lovable-uploads/c9c6c3f2-b9ca-4800-83e3-3feeb5e9e525.png", alt: "Marriage with Holy Mother", correctPosition: 4 },
+  { id: 4, src: "/lovable-uploads/54c53b9d-d624-4740-9ded-569f6627dea7.png", alt: "Tantra Sadhana", correctPosition: 5 },
+  { id: 5, src: "/lovable-uploads/60e017b3-acd5-4969-8da6-c1d5c26682b6.png", alt: "Meeting Jatadhari", correctPosition: 6 },
+  { id: 6, src: "/lovable-uploads/dee1e578-9c7c-497c-bede-7ca78f09e33a.png", alt: "Vedanta Sadhana", correctPosition: 7 },
+  { id: 7, src: "/lovable-uploads/5d2c11d1-79f1-4372-8174-00eea8a21d77.png", alt: "Practice of Islam", correctPosition: 8 },
+  { id: 8, src: "/lovable-uploads/60e78365-40cd-472a-9253-aefcd7d40161.png", alt: "Spiritual devotion", correctPosition: 9 },
+  { id: 9, src: "/lovable-uploads/1f1ed2a0-9689-4b75-b132-c1961ed9d558.png", alt: "First Biksha", correctPosition: 1 }
 ];
 
 export default function StorySequenceGame() {
