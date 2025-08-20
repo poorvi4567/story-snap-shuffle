@@ -149,10 +149,12 @@ All colors MUST be HSL.
   }
 
   .drop-zone {
-    @apply flex items-center justify-center rounded-lg p-2 h-40 md:h-52;
+    @apply flex items-center justify-center rounded-lg p-2;
     background-color: hsl(var(--game-drop-area));
     border: 2px dashed hsl(var(--game-border));
     transition: all var(--transition-medium) ease-in-out;
+    aspect-ratio: 2/3;
+    min-height: 200px;
   }
 
   .drop-zone.active {
@@ -164,37 +166,14 @@ All colors MUST be HSL.
     border-style: solid;
   }
 
-  .carousel-container {
-    @apply mt-8 p-4 rounded-lg relative;
-    background-color: hsl(var(--game-board));
-    border: 2px solid hsl(var(--game-border));
-  }
-
-  .carousel-inner {
-    @apply flex overflow-hidden relative rounded-lg;
-    height: 250px;
-  }
-
-  .carousel-item {
-    @apply absolute w-full h-full transition-all duration-500 flex items-center justify-center;
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  .carousel-item.active {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .carousel-item.previous {
-    transform: translateX(-100%);
-  }
-
   .story-card {
     @apply cursor-grab rounded-lg overflow-hidden bg-card border-2 border-solid border-primary/30;
-    width: 100%;
-    max-width: 220px;
+    max-width: 120px;
     transition: all var(--transition-fast) ease-in-out;
+  }
+
+  .story-card.placed {
+    @apply max-w-none w-full h-full;
   }
 
   .story-card:hover {
@@ -208,11 +187,21 @@ All colors MUST be HSL.
   }
 
   .story-card img {
-    @apply w-full h-36 object-cover;
+    @apply w-full h-auto object-contain;
   }
 
-  .carousel-nav {
-    @apply flex justify-between mt-4;
+  .story-card.placed img {
+    @apply w-full h-full object-contain;
+  }
+
+  .images-container {
+    @apply mt-8 p-6 rounded-lg;
+    background-color: hsl(var(--game-board));
+    border: 2px solid hsl(var(--game-border));
+  }
+
+  .images-grid {
+    @apply grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-4 justify-items-center;
   }
 
   .control-button {

@@ -23,7 +23,6 @@ const storyImages: StoryImage[] = [
 ];
 
 export default function StorySequenceGame() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [placedCards, setPlacedCards] = useState<{ [key: number]: StoryImage | null }>({});
   const [gameComplete, setGameComplete] = useState(false);
   const [resultMessage, setResultMessage] = useState('');
@@ -55,16 +54,6 @@ export default function StorySequenceGame() {
       sound.currentTime = 0;
       sound.play().catch(() => {});
     }
-  };
-
-  const nextImage = () => {
-    playClickSound();
-    setCurrentImageIndex((prev) => (prev + 1) % storyImages.length);
-  };
-
-  const prevImage = () => {
-    playClickSound();
-    setCurrentImageIndex((prev) => (prev - 1 + storyImages.length) % storyImages.length);
   };
 
   const handleDragStart = (e: React.DragEvent, image: StoryImage) => {
@@ -126,11 +115,11 @@ export default function StorySequenceGame() {
     setPlacedCards(initialBoard);
     setGameComplete(false);
     setResultMessage('');
-    setCurrentImageIndex(0);
   };
 
-  const currentImage = storyImages[currentImageIndex];
-  const isCurrentImagePlaced = Object.values(placedCards).some(card => card?.id === currentImage.id);
+  const availableImages = storyImages.filter(image => 
+    !Object.values(placedCards).some(card => card?.id === image.id)
+  );
 
   return (
     <div className="game-container">
@@ -160,15 +149,12 @@ export default function StorySequenceGame() {
             onDrop={(e) => handleDrop(e, position)}
           >
             {placedCards[position] ? (
-              <div className="story-card">
+              <div className="story-card placed">
                 <img
                   src={placedCards[position]!.src}
                   alt={placedCards[position]!.alt}
                   draggable={false}
                 />
-                <div className="p-2 text-xs text-center font-medium">
-                  Position {position}
-                </div>
               </div>
             ) : (
               <div className="text-center text-muted-foreground">
@@ -180,54 +166,19 @@ export default function StorySequenceGame() {
         ))}
       </div>
 
-      <div className="carousel-container">
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            {!isCurrentImagePlaced ? (
-              <div
-                className="story-card"
-                draggable
-                onDragStart={(e) => handleDragStart(e, currentImage)}
-              >
-                <img src={currentImage.src} alt={currentImage.alt} />
-                <div className="p-3 text-center">
-                  <div className="font-medium text-sm">{currentImage.alt}</div>
-                  <div className="text-xs text-muted-foreground mt-1">
-                    Card {currentImage.id} of {storyImages.length}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="text-center text-muted-foreground">
-                <div className="text-lg font-medium">Card Already Placed</div>
-                <div className="text-sm">"{currentImage.alt}" is on the board</div>
-              </div>
-            )}
-          </div>
-        </div>
-        
-        <div className="carousel-nav">
-          <Button 
-            variant="carousel" 
-            onClick={prevImage}
-            disabled={storyImages.length <= 1}
-          >
-            <ChevronLeft className="w-4 h-4" />
-            Previous
-          </Button>
-          
-          <div className="text-center text-sm text-muted-foreground self-center">
-            {currentImageIndex + 1} of {storyImages.length}
-          </div>
-          
-          <Button 
-            variant="carousel" 
-            onClick={nextImage}
-            disabled={storyImages.length <= 1}
-          >
-            Next
-            <ChevronRight className="w-4 h-4" />
-          </Button>
+      <div className="images-container">
+        <h3 className="text-xl font-semibold mb-4 text-center">Available Story Cards</h3>
+        <div className="images-grid">
+          {availableImages.map((image) => (
+            <div
+              key={image.id}
+              className="story-card"
+              draggable
+              onDragStart={(e) => handleDragStart(e, image)}
+            >
+              <img src={image.src} alt={image.alt} />
+            </div>
+          ))}
         </div>
       </div>
 
