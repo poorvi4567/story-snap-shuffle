@@ -203,6 +203,12 @@ All colors MUST be HSL.
     @apply w-full h-full object-contain;
   }
 
+  .story-card.selected {
+  outline: 3px solid #22c55e; /* green border */
+  outline-offset: 2px;
+}
+
+
   .images-container {
     @apply mt-8 p-6 rounded-lg;
     background-color: hsl(var(--game-board));
