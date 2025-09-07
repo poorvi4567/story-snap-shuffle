@@ -153,8 +153,8 @@ All colors MUST be HSL.
     background-color: hsl(var(--game-drop-area));
     border: 2px dashed hsl(var(--game-border));
     transition: all var(--transition-medium) ease-in-out;
-    aspect-ratio: 2/3;
-    min-height: 200px;
+    aspect-ratio: 3/4;
+    min-height: 140px;
   }
 
   .drop-zone.active {
@@ -167,10 +167,19 @@ All colors MUST be HSL.
   }
 
   .story-card {
-    @apply cursor-grab rounded-lg overflow-hidden bg-card border-2 border-solid border-primary/30;
-    max-width: 120px;
-    transition: all var(--transition-fast) ease-in-out;
+  max-width: 180px; /* increase size */
+}
+
+.story-card {
+  max-width: 220px; /* increase base size */
+}
+
+@media (min-width: 768px) {
+  .story-card {
+    max-width: 260px; /* even bigger on medium+ screens */
   }
+}
+
 
   .story-card.placed {
     @apply max-w-none w-full h-full;
@@ -201,8 +210,9 @@ All colors MUST be HSL.
   }
 
   .images-grid {
-    @apply grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-4 justify-items-center;
-  }
+  @apply grid gap-6 justify-items-center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 
   .control-button {
     @apply px-6 py-2 rounded-full font-medium flex items-center justify-center gap-2 transition-all;
